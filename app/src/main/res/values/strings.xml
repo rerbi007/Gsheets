@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">Gsheets</string>
+    <string name="specifyLastName">Необходимо указать фамилию</string>
+    <string name="specifyName">Необходимо указать имя</string>
+    <string name="specifyPatronymic">Необходимо указать отчество</string>
+    <string name="specifyPhoneNumber">Необходимо указать номер телефона</string>
+    <string name="specifyEmail">Необходимо указать электронную почту</string>
+    <string name="confirmDataCorrectness">Необходимо подтвердить правильность введенных данных</string>
+    <string name="acceptPersonalDataProcessing">Необходимо дать согласие на обработку персональных данных</string>
+    <string-array name="course">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="numberOfCopies">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="groupNumbers">
+        <item>101 МК</item>
+        <item>104 ИСП</item>
+        <item>104 СР</item>
+        <item>104 Т</item>
+        <item>105 ИСП</item>
+        <item>106 ИСП</item>
+        <item>106 КР</item>
+        <item>111 Ф</item>
+        <item>114 ДОШ</item>
+        <item>118 С</item>
+        <item>120 К</item>
+        <item>138 ЭО</item>
+        <item>194 ОП</item>
+        <item>197 П</item>
+        <item>204 ИСП</item>
+        <item>204 МСС</item>
+        <item>204 СР</item>
+        <item>205 КР</item>
+        <item>211 Ф</item>
+        <item>214 ДОШ</item>
+        <item>214 ТС</item>
+        <item>237 ЭО</item>
+        <item>292 ОП</item>
+        <item>293 ОП</item>
+        <item>296 П</item>
+        <item>302 ИСП</item>
+        <item>303 ИСП</item>
+        <item>303 МСС</item>
+        <item>303 Т</item>
+        <item>304 ИСП</item>
+        <item>310 ЗАФК</item>
+        <item>311 Ф</item>
+        <item>313 ТС</item>
+        <item>314 ДОШ</item>
+        <item>317 С</item>
+        <item>336 ЭО</item>
+        <item>391 ОП</item>
+        <item>395 П</item>
+        <item>402 Т</item>
+        <item>403 ИСП</item>
+        <item>403 ТП</item>
+        <item>404 СР</item>
+        <item>411 Ф</item>
+        <item>412 ТС</item>
+        <item>414 ДОШ</item>
+        <item>423 А</item>
+        <item>435 ЭО</item>
+        <item>490 ОП</item>
+        <item>494 П</item>
+    </string-array>
+</resources>
