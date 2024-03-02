@@ -7,6 +7,7 @@
     <string name="specifyEmail">Необходимо указать электронную почту</string>
     <string name="confirmDataCorrectness">Необходимо подтвердить правильность введенных данных</string>
     <string name="acceptPersonalDataProcessing">Необходимо дать согласие на обработку персональных данных</string>
+    <string name="iAmNotRobot">Пройдите проверку, что Вы не робот</string>
     <string-array name="course">
         <item>1</item>
         <item>2</item>

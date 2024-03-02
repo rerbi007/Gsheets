@@ -7,6 +7,9 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.inputmethod.InputMethodManager;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -22,12 +25,19 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.recaptcha.Recaptcha;
+import com.google.android.recaptcha.RecaptchaAction;
+import com.google.android.recaptcha.RecaptchaTasksClient;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
-
+    @Nullable
+    private RecaptchaTasksClient recaptchaTasksClient = null;
+    CheckBox iAmNotRobot;
     String surname, name, patronymic, phoneNumber, groupNumber,  email, numberOfCopies;
     ArrayList<String> GroupNumbers = new ArrayList<>();
     ArrayList<String> filteredGroupNumbers = new ArrayList<>();
@@ -40,7 +50,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initializeRecaptchaClient();
 
+        iAmNotRobot = findViewById(R.id.iAmNotRobot);
         saveData=findViewById(R.id.saveData);
         courseSpinner = findViewById(R.id.courseSpinner);
         // adding the initial elements
@@ -152,6 +164,10 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, R.string.acceptPersonalDataProcessing, Toast.LENGTH_SHORT).show();
                 return;
             }
+            if(!((CheckBox)findViewById(R.id.iAmNotRobot)).isChecked()){
+                Toast.makeText(MainActivity.this, R.string.iAmNotRobot, Toast.LENGTH_SHORT).show();
+                return;
+            }
 
             saveData.setEnabled(false);
             sendData(surname, name, patronymic, phoneNumber, email, groupNumber, numberOfCopies);
@@ -159,8 +175,58 @@ public class MainActivity extends AppCompatActivity {
 
             new Handler().postDelayed(() -> saveData.setEnabled(true), 5000); // Delay of 5 seconds (5000 milliseconds)
         });
+
+        iAmNotRobot.setOnClickListener(this::executeLoginAction);
     }
 
+    private void initializeRecaptchaClient() {
+        Recaptcha
+                .getTasksClient(getApplication(), "6Lf-wIYpAAAAAL2z5v35_p41OO-X-YxZZEL7b7hA")
+                .addOnSuccessListener(
+                        this,
+                        new OnSuccessListener<RecaptchaTasksClient>() {
+                            @Override
+                            public void onSuccess(RecaptchaTasksClient client) {
+                                MainActivity.this.recaptchaTasksClient = client;
+                            }
+                        })
+                .addOnFailureListener(
+                        this,
+                        new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                // Handle communication errors ...
+                                // See "Handle communication errors" section
+                            }
+                        });
+    }
+
+    private void executeLoginAction(View v) {
+        assert recaptchaTasksClient != null;
+        recaptchaTasksClient
+                .executeTask(RecaptchaAction.LOGIN)
+                .addOnSuccessListener(
+                        this,
+                        new OnSuccessListener<String>() {
+                            @Override
+                            public void onSuccess(String token) {
+                                // Handle success ...
+                                // See "What's next" section for instructions
+                                // about handling tokens.
+                                //iAmNotRobot.setChecked(true);
+                            }
+                        })
+                .addOnFailureListener(
+                        this,
+                        new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                // Handle communication errors ...
+                                // See "Handle communication errors" section
+                                //iAmNotRobot.setChecked(false);
+                            }
+                        });
+    }
 
 
     private void sendData(String surname, String name, String patronymic, String phoneNumber, String email, String groupNumber, String numberOfCopies) {
