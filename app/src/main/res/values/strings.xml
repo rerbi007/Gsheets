@@ -8,6 +8,21 @@
     <string name="confirmDataCorrectness">Необходимо подтвердить правильность введенных данных</string>
     <string name="acceptPersonalDataProcessing">Необходимо дать согласие на обработку персональных данных</string>
     <string name="iAmNotRobot">Пройдите проверку, что Вы не робот</string>
+    <string name="studyPlaceCertificate">Справка с места учебы (для подтверждения факта обучения)</string>
+    <string name="personalData">Персональные данные</string>
+    <string name="surname">Фамилия</string>
+    <string name="name">Имя</string>
+    <string name="patronymic">Отчество</string>
+    <string name="phone">Номер телефона</string>
+    <string name="email">Электронная почта</string>
+    <string name="serviceInformationRequired">Информация к услуге</string>
+    <string name="course">Курс</string>
+    <string name="groupNumber">Номер группы</string>
+    <string name="copiesNumber">Количество копий справки (не более двух)</string>
+    <string name="isCorrect">Я подтверждаю правильность введенных мною данных</string>
+    <string name="iAgree">Я согласен с условиями обработки персональных данных https://www.consultant.ru/document/cons_doc_LAW_61801/</string>
+    <string name="iAmNotRobotTextView">Я не робот</string>
+    <string name="send">ОТПРАВИТЬ</string>
     <string-array name="course">
         <item>1</item>
         <item>2</item>

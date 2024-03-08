@@ -1,149 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_margin="10dp">
-
-            <!--Заголовок 1 название справки-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Справка с места учебы (для подтверждения факта обучения)"
+                android:text="@string/studyPlaceCertificate"
                 android:textSize="28sp" />
-
-            <!--Заголовок 2 категория данных-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Персональные данные"
+                android:text="@string/personalData"
                 android:textSize="24sp" />
-
-            <!--Фамилия-->
             <EditText
                 android:id="@+id/surname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/rectangle_bg"
-                android:gravity="left"
-                android:hint="Фамилия"
+                android:gravity="start"
+                android:hint="@string/surname"
                 android:minHeight="48dp"
-                android:padding="10dp" />
-
-            <!--Имя-->
+                android:padding="10dp"
+                android:inputType="textPersonName"
+                android:autofillHints="surname" />
             <EditText
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/rectangle_bg"
-                android:gravity="left"
-                android:hint="Имя"
+                android:gravity="start"
+                android:hint="@string/name"
                 android:minHeight="48dp"
-                android:padding="10dp" />
-
-            <!--Отчество-->
+                android:padding="10dp"
+                android:autofillHints="name"
+                android:inputType="textPersonName" />
             <EditText
                 android:id="@+id/patronymic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/rectangle_bg"
-                android:gravity="left"
-                android:hint="Отчество"
+                android:gravity="start"
+                android:hint="@string/patronymic"
                 android:minHeight="48dp"
-                android:padding="10dp" />
-
-            <!--НОМЕР ТЕЛЕФОНА-->
+                android:padding="10dp"
+                android:autofillHints="patronymic"
+                android:inputType="textPersonName" />
             <EditText
                 android:id="@+id/phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/rectangle_bg"
-
-                android:gravity="left"
-                android:hint="Номер телефона"
+                android:gravity="start"
+                android:hint="@string/phone"
                 android:minHeight="48dp"
-                android:padding="10dp" />
-
-            <!--EMAIL-->
+                android:padding="10dp"
+                android:autofillHints=""
+                android:inputType="phone" />
             <EditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/rectangle_bg"
-                android:gravity="left"
-                android:hint="Электронная почта"
+                android:gravity="start"
+                android:hint="@string/email"
                 android:minHeight="48dp"
-                android:padding="10dp" />
-
-            <!--Заголовок 2 Категория даных-->
+                android:padding="10dp"
+                android:autofillHints="emailAddress"
+                android:inputType="textEmailAddress" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:text="Информация к услуге"
+                android:text="@string/serviceInformationRequired"
                 android:textSize="24sp" />
-
-            <!--Заголовок 3 Наименование-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Курс"
+                android:text="@string/course"
                 android:textSize="18sp" />
-            <!--Номер группы-->
             <Spinner
                 android:id="@+id/courseSpinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:entries="@array/course"
                 android:minHeight="48dp" />
-            <!--Заголовок 3 Наименование-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Номер группы"
+                android:text="@string/groupNumber"
                 android:textSize="18sp" />
-            <!--Номер группы-->
             <Spinner
                 android:id="@+id/groupSpinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:entries="@array/groupNumbers"
                 android:minHeight="48dp" />
-
-            <!--Заголовок 3 Наименование-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Количество копий справки (не более двух)"
+                android:text="@string/copiesNumber"
                 android:textSize="18sp" />
-            <!--Количество экземпляров (не более двух)-->
             <Spinner
-                android:id="@+id/numberOfCopies"
+                android:id="@+id/copiesSpinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:entries="@array/numberOfCopies"
-
                 android:minHeight="48dp" />
-
-            <!--Я подтверждаю правильность введенных мною данных.-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -153,17 +132,14 @@
                 android:layout_marginTop="0dp"
                 android:layout_marginBottom="10dp">
                 <CheckBox
-                    android:id="@+id/iConfirm"
+                    android:id="@+id/isCorrect"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"/>
                 <TextView
-                    android:text="Я подтверждаю правильность введенных мною данных"
+                    android:text="@string/isCorrect"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:justificationMode="inter_word"/>
+                    android:layout_height="wrap_content"/>
             </LinearLayout>
-            <!--Я согласен с условиями обработки персональных данных
-            https://www.consultant.ru/document/cons_doc_LAW_61801/-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -177,11 +153,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Я согласен с условиями обработки персональных данных
-            https://www.consultant.ru/document/cons_doc_LAW_61801/"
-                    android:justificationMode="inter_word"/>
+                    android:text="@string/iAgree"/>
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -195,10 +168,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Я не робот"
-                    android:justificationMode="inter_word"/>
+                    android:text="@string/iAmNotRobotTextView"/>
             </LinearLayout>
-
             <Button
                 android:id="@+id/saveData"
                 android:layout_width="match_parent"
@@ -206,11 +177,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
                 android:minHeight="56dp"
-                android:text="ОТПРАВИТЬ"
+                android:text="@string/send"
                 android:textSize="18sp" />
-
         </LinearLayout>
     </ScrollView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
