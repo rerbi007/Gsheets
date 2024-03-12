@@ -1,7 +1,5 @@
 package com.rerbi007.gsheets;
 
-import static android.text.TextUtils.isEmpty;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,24 +8,25 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.Toast;
-
+import android.widget.*;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.safetynet.SafetyNet;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class MainActivity extends AppCompatActivity {
+import static android.text.TextUtils.isEmpty;
+
+public class MainActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks {
+    GoogleApiClient googleApiClient;
+    String SiteKey = "6LdgeoopAAAAAGCF5PNXtreKjuFEZ9zUmfTI94ks";
     CheckBox isCorrect, iAgree, iAmNotRobot;
     EditText surname, name, patronymic, phone,  email;
     View saveData;
@@ -112,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
-        findViewById(R.id.email).setOnKeyListener((v, keyCode, event) -> {
+        email.setOnKeyListener((v, keyCode, event) -> {
             if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
                 // Hide the keyboard
                 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -171,6 +170,25 @@ public class MainActivity extends AppCompatActivity {
             );
             new Handler(Looper.getMainLooper()).postDelayed(() -> saveData.setEnabled(true), 5000); // Delay of 5 seconds (5000 milliseconds)
         });
+
+        googleApiClient = new GoogleApiClient.Builder(this)
+                .addApi(SafetyNet.API)
+                .addConnectionCallbacks(MainActivity.this)
+                .build();
+
+        iAmNotRobot.setOnClickListener(v -> {
+            if (iAmNotRobot.isChecked()) {
+                SafetyNet.SafetyNetApi.verifyWithRecaptcha(googleApiClient, SiteKey)
+                        .setResultCallback(recaptchaTokenResult -> {
+                            Status status = recaptchaTokenResult.getStatus();
+                            if (status.isSuccess()) {
+                                Toast.makeText(MainActivity.this, "Verification successful", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+            } else {
+                Toast.makeText(MainActivity.this, "Verification not done", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 
@@ -184,6 +202,16 @@ public class MainActivity extends AppCompatActivity {
 
         RequestQueue queue= Volley.newRequestQueue(this);
         queue.add(stringRequest);
+
+    }
+
+    @Override
+    public void onConnected(@Nullable @org.jetbrains.annotations.Nullable Bundle bundle) {
+
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
 
     }
 }
