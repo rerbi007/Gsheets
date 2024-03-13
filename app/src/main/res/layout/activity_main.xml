@@ -7,13 +7,15 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-194dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
@@ -33,65 +35,65 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:autofillHints="surname"
                 android:background="@drawable/rectangle_bg"
                 android:gravity="start"
                 android:hint="@string/surname"
-                android:minHeight="48dp"
-                android:padding="10dp"
                 android:inputType="textPersonName"
-                android:autofillHints="surname" />
+                android:minHeight="48dp"
+                android:padding="10dp" />
 
             <EditText
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:autofillHints="name"
                 android:background="@drawable/rectangle_bg"
                 android:gravity="start"
                 android:hint="@string/name"
+                android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:padding="10dp"
-                android:autofillHints="name"
-                android:inputType="textPersonName" />
+                android:padding="10dp" />
 
             <EditText
                 android:id="@+id/patronymic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:autofillHints="patronymic"
                 android:background="@drawable/rectangle_bg"
                 android:gravity="start"
                 android:hint="@string/patronymic"
+                android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:padding="10dp"
-                android:autofillHints="patronymic"
-                android:inputType="textPersonName" />
+                android:padding="10dp" />
 
             <EditText
                 android:id="@+id/phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:autofillHints=""
                 android:background="@drawable/rectangle_bg"
                 android:gravity="start"
                 android:hint="@string/phone"
+                android:inputType="phone"
                 android:minHeight="48dp"
-                android:padding="10dp"
-                android:autofillHints=""
-                android:inputType="phone" />
+                android:padding="10dp" />
 
             <EditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:autofillHints="emailAddress"
                 android:background="@drawable/rectangle_bg"
                 android:gravity="start"
                 android:hint="@string/email"
+                android:inputType="textEmailAddress"
                 android:minHeight="48dp"
-                android:padding="10dp"
-                android:autofillHints="emailAddress"
-                android:inputType="textEmailAddress" />
+                android:padding="10dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -143,11 +145,11 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginEnd="10dp"
                 android:layout_marginTop="0dp"
-                android:layout_marginBottom="10dp">
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
                 <CheckBox
                     android:id="@+id/isCorrect"
@@ -155,17 +157,17 @@
                     android:layout_height="match_parent" />
 
                 <TextView
-                    android:text="@string/isCorrect"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="@string/isCorrect" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_marginEnd="10dp"
                 android:gravity="center_vertical"
-                android:layout_marginEnd="10dp">
+                android:orientation="horizontal">
 
                 <CheckBox
                     android:id="@+id/iAgree"
@@ -181,9 +183,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_marginEnd="10dp"
                 android:gravity="center_vertical"
-                android:layout_marginEnd="10dp">
+                android:orientation="horizontal">
 
                 <CheckBox
                     android:id="@+id/iAmNotRobot"
