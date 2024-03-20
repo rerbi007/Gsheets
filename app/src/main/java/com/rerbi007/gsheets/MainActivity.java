@@ -19,18 +19,14 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-
 import java.util.ArrayList;
 import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
+    String url;
     CheckBox isCorrect, iAgree, iAmNotRobot;
     EditText surname, name, patronymic, phone,  email;
-    View saveData;
+    View saveData, testRecaptcha;
     Spinner courseSpinner, groupSpinner, copiesSpinner;
     ArrayList<String> groups = new ArrayList<>();
     ArrayList<String> filteredGroupNumbers = new ArrayList<>();
@@ -41,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        testRecaptcha = findViewById(R.id.testRecaptcha);
+        url = getString(R.string.urlCertificateFromThePlaceOfStudy);
         surname = findViewById(R.id.surname);
         name = findViewById(R.id.name);
         patronymic = findViewById(R.id.patronymic);
@@ -162,7 +160,9 @@ public class MainActivity extends AppCompatActivity {
             }
 
             saveData.setEnabled(false);
-            sendData(
+            MySender.sendData(
+                    MainActivity.this,
+                    url,
                     surname.getText().toString(),
                     name.getText().toString(),
                     patronymic.getText().toString(),
@@ -173,19 +173,7 @@ public class MainActivity extends AppCompatActivity {
             );
             new Handler(Looper.getMainLooper()).postDelayed(() -> saveData.setEnabled(true), 5000); // Delay of 5 seconds (5000 milliseconds)
         });
-    }
-
-
-
-    private void sendData(String surname, String name, String patronymic, String phone, String email, String groupNumber, String numberOfCopies) {
-        String url="https://script.google.com/macros/s/AKfycby_Y6kU8NMu6CDEIoYdo52ykVvzp0yTCG-sIP0y0OstkmLZA6XiahGpymPp8LFvzjTq/exec?";
-        url=url+"action=create&surname="+surname+"&name="+name+"&patronymic="+patronymic+"&phone="+phone+"&email="+email+"&groupNumber="+groupNumber+"&numberOfCopies="+numberOfCopies;
-
-        StringRequest stringRequest=new StringRequest(Request.Method.GET, url, response -> Toast.makeText(MainActivity.this, response,Toast.LENGTH_SHORT).show(), error -> Toast.makeText(MainActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show());
-
-
-        RequestQueue queue= Volley.newRequestQueue(this);
-        queue.add(stringRequest);
-
+        MyCaptcha cap = new MyCaptcha();
+        testRecaptcha.setOnClickListener(v -> cap.onClick(MainActivity.this));
     }
 }

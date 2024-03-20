@@ -23,6 +23,9 @@
     <string name="iAgree">Я согласен с условиями обработки персональных данных https://www.consultant.ru/document/cons_doc_LAW_61801/</string>
     <string name="iAmNotRobotTextView">Я не робот</string>
     <string name="send">ОТПРАВИТЬ</string>
+    <string name="urlCertificateFromThePlaceOfStudy">https://script.google.com/macros/s/AKfycby_Y6kU8NMu6CDEIoYdo52ykVvzp0yTCG-sIP0y0OstkmLZA6XiahGpymPp8LFvzjTq/exec?</string>
+    <string name="testRecaptcha">TESTRECAPTCHA</string>
+    <string name="siteKey">6LdgeoopAAAAAGCF5PNXtreKjuFEZ9zUmfTI94ks</string>
     <string-array name="course">
         <item>1</item>
         <item>2</item>
