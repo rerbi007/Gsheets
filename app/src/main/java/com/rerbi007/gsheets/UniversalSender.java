@@ -1,6 +1,8 @@
 package com.rerbi007.gsheets;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -13,8 +15,16 @@ public class UniversalSender {
         StringRequest stringRequest = new StringRequest(
                  Request.Method.GET,
                 urlData,
-                response -> Toast.makeText(context, response, Toast.LENGTH_SHORT).show(),
-                error -> Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show());
+                response -> new AlertDialog.Builder(context)
+                        .setTitle("Успех")
+                        .setMessage(response)
+                        .setPositiveButton(android.R.string.yes, (dialog, which) -> { })
+                        .show(),
+                error -> new AlertDialog.Builder(context)
+                        .setTitle("Ошибка сохранения")
+                        .setMessage(error.getMessage())
+                        .setPositiveButton(android.R.string.yes, (dialog, which) -> { })
+                        .show());
         RequestQueue queue = Volley.newRequestQueue(context);
         queue.add(stringRequest);
     }

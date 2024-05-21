@@ -150,7 +150,7 @@ public class StudyPlaceActivity extends AppCompatActivity {
                             + "&numberOfCopies=" + copiesSpinner.getSelectedItem().toString();
 
             captcha.validate(StudyPlaceActivity.this, request, this);
-            new Handler(Looper.getMainLooper()).postDelayed(() -> saveData.setEnabled(true), 5000); // Delay of 5 seconds (5000 milliseconds)
+            new Handler(Looper.getMainLooper()).postDelayed(() -> saveData.setEnabled(true), 15000); // Delay of 5 seconds (5000 milliseconds)
         });
     }
 }
