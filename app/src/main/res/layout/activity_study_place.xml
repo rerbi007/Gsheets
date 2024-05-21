@@ -3,13 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:id="@+id/activity_study_place"
+    tools:context=".StudyPlaceActivity">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="-194dp">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -17,82 +16,21 @@
             android:layout_margin="10dp"
             android:orientation="vertical">
 
+            <include
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/reusable_header"/>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/studyPlaceCertificate"
                 android:textSize="28sp" />
 
-            <TextView
+            <include
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="@string/personalData"
-                android:textSize="24sp" />
-
-            <EditText
-                android:id="@+id/surname"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:autofillHints="surname"
-                android:gravity="start"
-                android:hint="@string/surname"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:padding="10dp"
-                android:textColorHint="#78909C" />
-
-            <EditText
-                android:id="@+id/name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:autofillHints="name"
-                android:gravity="start"
-                android:hint="@string/name"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:padding="10dp"
-                android:textColorHint="#78909C" />
-
-            <EditText
-                android:id="@+id/patronymic"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:autofillHints="patronymic"
-                android:gravity="start"
-                android:hint="@string/patronymic"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:padding="10dp" />
-
-            <EditText
-                android:id="@+id/phone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:autofillHints="phone"
-                android:gravity="start"
-                android:hint="@string/phone"
-                android:inputType="phone"
-                android:minHeight="48dp"
-                android:padding="10dp"
-                android:textColorHint="#546E7A" />
-
-            <EditText
-                android:id="@+id/email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:autofillHints="emailAddress"
-                android:gravity="start"
-                android:hint="@string/email"
-                android:inputType="textEmailAddress"
-                android:minHeight="48dp"
-                android:padding="10dp"
-                android:textColorHint="#78909C" />
+                layout="@layout/reusable_personal_data"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -198,19 +136,9 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/testRecaptcha"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:minHeight="56dp"
-                android:text="@string/testRecaptcha"
-                android:textSize="18sp" />
-
-            <Button
                 android:id="@+id/saveData"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
                 android:minHeight="56dp"
                 android:text="@string/send"

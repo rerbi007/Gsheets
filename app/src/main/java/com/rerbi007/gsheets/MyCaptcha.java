@@ -3,6 +3,7 @@ package com.rerbi007.gsheets;
 import static android.content.ContentValues.TAG;
 
 import android.app.Activity;
+import android.content.Context;
 import android.util.Log;
 
 import com.google.android.gms.common.api.ApiException;
@@ -10,7 +11,7 @@ import com.google.android.gms.common.api.CommonStatusCodes;
 import com.google.android.gms.safetynet.SafetyNet;
 
 public class MyCaptcha {
-    public void onClick(Activity activity) {
+    public void validate(Activity activity, String request, Context context) {
         SafetyNet.getClient(activity).verifyWithRecaptcha(activity.getString(R.string.siteKey))
                 .addOnSuccessListener(recaptchaTokenResponse -> {
                     // Indicates communication with reCAPTCHA service was
@@ -21,6 +22,8 @@ public class MyCaptcha {
                         // Validate the user response token using the
                         // reCAPTCHA site verify API.
                         Log.d(TAG, String.format("user response token is %s", userResponseToken));
+
+                        UniversalSender.sendData(context, request+"&token="+userResponseToken);
                     }
                 })
                 .addOnFailureListener(e -> {

@@ -8,12 +8,11 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-public class MySender {
-    public static void sendData(Context context, String url, String surname, String name, String patronymic, String phone, String email, String groupNumber, String numberOfCopies) {
-        url += "action=create&surname="+surname+"&name="+name+"&patronymic="+patronymic+"&phone="+phone+"&email="+email+"&groupNumber="+groupNumber+"&numberOfCopies="+numberOfCopies;
+public class UniversalSender {
+    public static void sendData(Context context, String urlData  ) {
         StringRequest stringRequest = new StringRequest(
-                Request.Method.GET,
-                url,
+                 Request.Method.GET,
+                urlData,
                 response -> Toast.makeText(context, response, Toast.LENGTH_SHORT).show(),
                 error -> Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show());
         RequestQueue queue = Volley.newRequestQueue(context);

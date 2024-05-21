@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main_form"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".MainFormActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/reusable_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_marginStart="22dp"
+            android:layout_marginEnd="22dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/available"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:gravity="left"
+                android:paddingStart="32dp"
+                android:paddingEnd="32dp"
+                android:text="@string/available"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/studyPlace"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Справка об обучении"
+                android:textSize="24sp" />
+
+
+            <Button
+                android:id="@+id/scholarship"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Справка о стипендии"
+                android:textSize="24sp"
+                app:layout_constraintTop_toBottomOf="@+id/studyPlace" />
+
+            <Button
+                android:id="@+id/invocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Справка-вызов"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+</ScrollView>
