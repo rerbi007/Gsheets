@@ -7,37 +7,54 @@
     android:layout_height="match_parent"
     tools:context=".InvocationActivity">
 
-        <LinearLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/reusable_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:orientation="vertical">
+            android:layout_marginBottom="30dp" />
 
-            <include
-                layout="@layout/reusable_header"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Справка-вызов"
+            android:textSize="28sp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Справка-вызов"
-                android:textSize="28sp" />
+        <include
+            layout="@layout/reusable_personal_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-            <include
-                layout="@layout/reusable_personal_data"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/employer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="Полное наименование организации - работодателя"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:textColorHint="#546E7A" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+        <include
+            layout="@layout/reusable_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-            <DatePicker
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal" />
 
-        </LinearLayout>
+        <include
+            layout="@layout/reusable_date_picker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <include
+            layout="@layout/reusable_send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
 </ScrollView>

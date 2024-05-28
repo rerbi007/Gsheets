@@ -28,5 +28,28 @@
             layout="@layout/reusable_personal_data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
+        <include
+            layout="@layout/reusable_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <include
+            layout="@layout/reusable_copies"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <include
+            layout="@layout/reusable_date_picker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+
+
+        <include
+            layout="@layout/reusable_send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </ScrollView>

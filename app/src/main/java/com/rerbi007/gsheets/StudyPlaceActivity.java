@@ -2,19 +2,20 @@ package com.rerbi007.gsheets;
 
 import static android.text.TextUtils.isEmpty;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,11 +27,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class StudyPlaceActivity extends AppCompatActivity {
+    ProgressBar progressBar;
+    TextView privacyPolicy;
     MyCaptcha captcha;
     String url;
     CheckBox isCorrect, iAgree, iAmNotRobot;
     EditText surname, name, patronymic, phone, email;
-    View saveData;
+    Button sendData;
     Spinner courseSpinner, groupSpinner, copiesSpinner;
     ArrayList<String> groups = new ArrayList<>();
     ArrayList<String> filteredGroupNumbers = new ArrayList<>();
@@ -47,8 +50,10 @@ public class StudyPlaceActivity extends AppCompatActivity {
             return insets;
         });
 
+        progressBar = findViewById(R.id.progress_bar);
+        privacyPolicy = findViewById(R.id.privacy_policy);
         captcha = new MyCaptcha();
-        url = getString(R.string.urlCertificateFromThePlaceOfStudy);
+        url = getString(R.string.urlStudyPlace);
         surname = findViewById(R.id.surname);
         name = findViewById(R.id.name);
         patronymic = findViewById(R.id.patronymic);
@@ -62,7 +67,7 @@ public class StudyPlaceActivity extends AppCompatActivity {
         iAgree = findViewById(R.id.iAgree);
         iAmNotRobot = findViewById(R.id.iAmNotRobot);
 
-        saveData = findViewById(R.id.saveData);
+        sendData = findViewById(R.id.saveData);
         // adding the initial elements
         Collections.addAll(groups, getResources().getStringArray(R.array.groupNumbers));
         filteredGroupNumbers = new ArrayList<>(groups);
@@ -104,7 +109,7 @@ public class StudyPlaceActivity extends AppCompatActivity {
             }
         });
 
-        saveData.setOnClickListener(v -> {
+        sendData.setOnClickListener(v -> {
             if (isEmpty(surname.getText().toString())) {
                 Toast.makeText(StudyPlaceActivity.this, R.string.specifyLastName, Toast.LENGTH_SHORT).show();
                 return;
@@ -125,6 +130,10 @@ public class StudyPlaceActivity extends AppCompatActivity {
                 Toast.makeText(StudyPlaceActivity.this, R.string.specifyEmail, Toast.LENGTH_SHORT).show();
                 return;
             }
+            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email.getText().toString()).matches()){
+                Toast.makeText(StudyPlaceActivity.this, "Невалидный email", Toast.LENGTH_SHORT).show();
+                return;
+            }
             if (!isCorrect.isChecked()) {
                 Toast.makeText(StudyPlaceActivity.this, R.string.confirmDataCorrectness, Toast.LENGTH_SHORT).show();
                 return;
@@ -138,7 +147,7 @@ public class StudyPlaceActivity extends AppCompatActivity {
                 return;
             }
 
-            saveData.setEnabled(false);
+            sendData.setEnabled(false);
             String request =
                     url
                             + "?action=create&surname=" + surname.getText().toString()
@@ -149,8 +158,11 @@ public class StudyPlaceActivity extends AppCompatActivity {
                             + "&group=" + groupSpinner.getSelectedItem().toString()
                             + "&numberOfCopies=" + copiesSpinner.getSelectedItem().toString();
 
-            captcha.validate(StudyPlaceActivity.this, request, this);
-            new Handler(Looper.getMainLooper()).postDelayed(() -> saveData.setEnabled(true), 15000); // Delay of 5 seconds (5000 milliseconds)
+            captcha.validate(StudyPlaceActivity.this, request, this, sendData, progressBar);
+            //new Handler(Looper.getMainLooper()).postDelayed(() -> sendData.setEnabled(true), 10000); // Delay of 5 seconds (5000 milliseconds)
         });
+
+        // переход по ссылке
+        privacyPolicy.setMovementMethod(LinkMovementMethod.getInstance());
     }
 }
