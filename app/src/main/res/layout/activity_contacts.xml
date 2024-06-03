@@ -31,41 +31,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:text="Справка-вызов"
+                android:text="Контакты"
                 android:textSize="28sp"
                 style="?attr/textViewStyle" />
 
             <include
-                layout="@layout/reusable_personal_data"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <EditText
-                android:id="@+id/employer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:hint="Полное наименование организации - работодателя"
-                android:inputType="text"
-                android:minHeight="48dp"
-                style="?attr/editTextStyle" />
-
-            <include
-                layout="@layout/reusable_group"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <include
+                android:visibility="invisible"
                 layout="@layout/reusable_date_picker"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-            <include
-                layout="@layout/reusable_send"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
         </LinearLayout>
-
     </LinearLayout>
 </ScrollView>

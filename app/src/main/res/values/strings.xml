@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Заявки студентов ГАПОУ СО АМТ</string>
+    <string name="app_name">Онлайн-заявки студентов ГАПОУ СО «АМТ»</string>
     <string name="specifyLastName">Необходимо указать фамилию</string>
     <string name="specifyName">Необходимо указать имя</string>
     <string name="specifyPatronymic">Необходимо указать отчество</string>
@@ -8,7 +8,7 @@
     <string name="confirmDataCorrectness">Необходимо подтвердить правильность введенных данных</string>
     <string name="acceptPersonalDataProcessing">Необходимо дать согласие на обработку персональных данных</string>
     <string name="iAmNotRobot">Подтвердите, что Вы не робот</string>
-    <string name="studyPlaceCertificate">Справка с места учебы (для подтверждения факта обучения)</string>
+    <string name="studyPlaceCertificate">Справка с места учебы (для\u00A0подтверждения факта обучения)</string>
     <string name="personalData">Персональные данные</string>
     <string name="surname">Фамилия</string>
     <string name="name">Имя</string>
@@ -20,12 +20,12 @@
     <string name="groupNumber">Номер группы</string>
     <string name="copiesNumber">Количество копий справки (не более двух)</string>
     <string name="isCorrect">Я подтверждаю правильность введенных мною данных</string>
-    <string name="iAgree">Я согласен с <a href="https://www.consultant.ru/document/cons_doc_LAW_61801/">условиями обработки персональных данных</a></string>
+    <string name="iAgree">Я принимаю <a href="https://www.consultant.ru/document/cons_doc_LAW_61801/">условия обработки персональных данных</a></string>
     <string name="iAmNotRobotTextView">Я не робот</string>
     <string name="send">ОТПРАВИТЬ</string>
     <string name="urlStudyPlace">https://script.google.com/macros/s/AKfycby60gKAZdcgjXbK3G3aijKIWzwfC6DXp58KXJugWm4oq3L1rSt9X6wbGvqbMAuJgWuC/exec</string>
+    <string name="urlScholarship">https://script.google.com/macros/s/AKfycbwsfgYhOeShgVv8hQ0bjmXVDQbsSgYmBq-MQd1-kEPOe5PR9bFOxvWqGD6zDtidJM3Arw/exec</string>
     <string name="urlInvocation">https://script.google.com/macros/s/AKfycbxGXg_KpAzw5WnEutnxRFmxrpzxU0LFKgqOb9rasqXXSzElcPMV7R3aBW8XgUO7-tQk/exec</string>
-    <string name="urlScholarship">https://script.google.com/macros/s/AKfycbwZjRBAAEIpyjqqeJfcHmhpYtqDoSNLxBous9mv1L4cbP3lCmLkiJima46x6E9H6nU2aQ/exec</string>
     <string name="testRecaptcha">TESTRECAPTCHA</string>
     <string name="siteKey">6LdgeoopAAAAAGCF5PNXtreKjuFEZ9zUmfTI94ks</string>
     <string name="available">Можно подать заявку на следующие справки</string>

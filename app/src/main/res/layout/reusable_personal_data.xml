@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
     android:orientation="vertical">
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/personalData"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        style="?attr/textViewStyle" />
 
     <EditText
         android:id="@+id/surname"
@@ -23,8 +25,7 @@
         android:inputType="textPersonName|textCapWords"
         android:minHeight="48dp"
         android:padding="10dp"
-        android:textColor="#000000"
-        android:textColorHint="#444444" />
+        style="?attr/editTextStyle" />
 
     <EditText
         android:id="@+id/name"
@@ -37,8 +38,7 @@
         android:inputType="textPersonName|textCapWords"
         android:minHeight="48dp"
         android:padding="10dp"
-        android:textColor="#000000"
-        android:textColorHint="#444444" />
+        style="?attr/editTextStyle"/>
 
     <EditText
         android:id="@+id/patronymic"
@@ -51,8 +51,7 @@
         android:inputType="textPersonName|textCapWords"
         android:minHeight="48dp"
         android:padding="10dp"
-        android:textColor="#000000"
-        android:textColorHint="#444444" />
+        style="?attr/editTextStyle" />
 
     <EditText
         android:id="@+id/phone"
@@ -61,11 +60,11 @@
         android:autofillHints="phone"
         android:gravity="start"
         android:hint="@string/phone"
+        android:layout_marginTop="10dp"
         android:inputType="phone"
         android:minHeight="48dp"
         android:padding="10dp"
-        android:textColor="#000000"
-        android:textColorHint="#444444" />
+        style="?attr/editTextStyle" />
 
     <EditText
         android:id="@+id/email"
@@ -78,7 +77,6 @@
         android:inputType="textEmailAddress|none"
         android:minHeight="48dp"
         android:padding="10dp"
-        android:textColor="#000000"
-        android:textColorHint="#444444" />
+        style="?attr/editTextStyle" />
 
 </LinearLayout>

@@ -22,7 +22,7 @@ public class UniversalSender {
     static RetryPolicy retryPolicy;
     public static void sendData(Context context, String urlData, Button sendData, ProgressBar progressBar) {
         timeOut = 50000;
-        retryPolicy = new DefaultRetryPolicy(timeOut, 0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
+        retryPolicy = new DefaultRetryPolicy(timeOut, 0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT); // Чтобы не дублировались записи
         StringRequest stringRequest = new StringRequest(
                  Request.Method.GET,
                 urlData,
@@ -34,7 +34,7 @@ public class UniversalSender {
                             .setPositiveButton(android.R.string.yes, (dialog, which) -> {
                             })
                             .show();
-                    new Handler(Looper.getMainLooper()).postDelayed(() -> sendData.setEnabled(true), 100);
+                    new Handler(Looper.getMainLooper()).postDelayed(() -> sendData.setEnabled(true), 100); // Разрешить кнопку для отправки нового запроса
                 },
                 error -> {
                     progressBar.setVisibility(View.INVISIBLE);
@@ -44,7 +44,7 @@ public class UniversalSender {
                             .setPositiveButton(android.R.string.yes, (dialog, which) -> {
                             })
                             .show();
-                    new Handler(Looper.getMainLooper()).postDelayed(() -> sendData.setEnabled(true), 100);
+                    new Handler(Looper.getMainLooper()).postDelayed(() -> sendData.setEnabled(true), 100); // Разрешить кнопку для отправки нового запроса
                 });
         stringRequest.setRetryPolicy(retryPolicy);
         RequestQueue queue = Volley.newRequestQueue(context);

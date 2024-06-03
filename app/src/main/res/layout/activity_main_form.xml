@@ -10,7 +10,7 @@
     <!--fillViewPort - make layout expand to size of seceen-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:orientation="vertical">
 
@@ -21,16 +21,18 @@
 
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:layout_marginStart="22dp"
             android:layout_marginEnd="22dp"
+            android:layout_marginBottom="40dp"
             android:gravity="center_vertical"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/available"
+                style="?attr/textViewStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
@@ -42,28 +44,53 @@
 
             <Button
                 android:id="@+id/studyPlace"
+                style="?attr/buttonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Справка об обучении"
-                android:textSize="24sp" />
+                android:text="Справка об обучении" />
 
 
             <Button
                 android:id="@+id/scholarship"
+                style="?attr/buttonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:text="Справка о стипендии"
-                android:textSize="24sp"
                 app:layout_constraintTop_toBottomOf="@+id/studyPlace" />
 
             <Button
                 android:id="@+id/invocation"
+                style="?attr/buttonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:text="Справка-вызов"
+                android:text="Справка-вызов" />
+
+            <TextView
+                style="?attr/textViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:layout_marginBottom="24dp"
+                android:paddingStart="32dp"
+                android:paddingEnd="32dp"
+                android:text="Поддержка, отзывы, обратная связь"
                 android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/contacts"
+                style="?attr/buttonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Контакты" />
+
+            <include
+                layout="@layout/reusable_date_picker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

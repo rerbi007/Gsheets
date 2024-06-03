@@ -5,6 +5,7 @@ import static android.text.TextUtils.isEmpty;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.telephony.PhoneNumberUtils;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.View;
@@ -44,7 +45,7 @@ public class StudyPlaceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_study_place);
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.activity_study_place), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
@@ -122,8 +123,12 @@ public class StudyPlaceActivity extends AppCompatActivity {
                 Toast.makeText(StudyPlaceActivity.this, R.string.specifyPatronymic, Toast.LENGTH_SHORT).show();
                 return;
             }
-            if (isEmpty(phone.getText().toString())) {
+            if (isEmpty(phone.getText().toString().trim().replaceAll("[-+.^:,( )]",""))) {
                 Toast.makeText(StudyPlaceActivity.this, R.string.specifyPhoneNumber, Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (!PhoneNumberUtils.isGlobalPhoneNumber(phone.getText().toString().trim().replaceAll("[-+.^:,( )]",""))) {
+                Toast.makeText(StudyPlaceActivity.this, "Невалидный номер телефона", Toast.LENGTH_SHORT).show();
                 return;
             }
             if (isEmpty(email.getText().toString())) {
@@ -147,14 +152,13 @@ public class StudyPlaceActivity extends AppCompatActivity {
                 return;
             }
 
-            sendData.setEnabled(false);
             String request =
                     url
-                            + "?action=create&surname=" + surname.getText().toString()
-                            + "&name=" + name.getText().toString()
-                            + "&patronymic=" + patronymic.getText().toString()
-                            + "&phone=" + phone.getText().toString()
-                            + "&email=" + email.getText().toString()
+                            + "?action=create&surname=" + surname.getText().toString().trim()
+                            + "&name=" + name.getText().toString().trim()
+                            + "&patronymic=" + patronymic.getText().toString().trim()
+                            + "&phone=" + phone.getText().toString().trim().replaceAll("[-+.^:,( )]","")
+                            + "&email=" + email.getText().toString().trim()
                             + "&group=" + groupSpinner.getSelectedItem().toString()
                             + "&numberOfCopies=" + copiesSpinner.getSelectedItem().toString();
 

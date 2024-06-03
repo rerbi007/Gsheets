@@ -10,7 +10,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -22,7 +21,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/isCorrect" />
+            android:text="@string/isCorrect"
+            style="?attr/textViewStyle" />
     </LinearLayout>
 
     <LinearLayout
@@ -41,7 +41,8 @@
             android:id="@+id/privacy_policy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/iAgree" />
+            android:text="@string/iAgree"
+            style="?attr/textViewStyle" />
     </LinearLayout>
 
     <LinearLayout
@@ -59,7 +60,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/iAmNotRobotTextView" />
+            android:text="@string/iAmNotRobotTextView"
+            style="?attr/textViewStyle" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -74,11 +76,11 @@
             android:layout_height="wrap_content"
             android:minHeight="56dp"
             android:text="@string/send"
-            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            style="?attr/buttonStyle"/>
 
         <ProgressBar
             android:id="@+id/progress_bar"
@@ -90,6 +92,4 @@
             app:layout_constraintTop_toTopOf="@+id/saveData" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </LinearLayout>

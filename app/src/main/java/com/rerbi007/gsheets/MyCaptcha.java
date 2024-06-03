@@ -27,6 +27,7 @@ public class MyCaptcha {
                         // Validate the user response token using the
                         // reCAPTCHA site verify API.
                         Log.d(TAG, String.format("user response token is %s", userResponseToken));
+                        sendData.setEnabled(false);
                         progressBar.setVisibility(View.VISIBLE);
                         UniversalSender.sendData(context, request+"&userResponseToken="+userResponseToken, sendData, progressBar);
                     }
@@ -57,7 +58,6 @@ public class MyCaptcha {
                                 })
                                 .show();
                     }
-                    sendData.setEnabled(true);
                 });
     }
 }

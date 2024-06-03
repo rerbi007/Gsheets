@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/values/attrs.xml -->
+<resources>
+    <attr name="editTextStyle" format="reference"/>
+    <attr name="textViewStyle" format="reference"/>
+    <attr name="buttonStyle" format="reference"/>
+    <attr name="spinnerStyle" format="reference"/>
+    <attr name="checkBoxStyle" format="reference"/>
+</resources>

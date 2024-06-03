@@ -1,7 +1,51 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Gsheets" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <!-- Основные цвета -->
+        <item name="colorPrimary">#1E90FF</item>
+        <item name="colorPrimaryVariant">#104E8B</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+
+        <item name="colorSecondary">#A9A9A9</item>
+        <item name="colorSecondaryVariant">#696969</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+
+        <!-- Цвет фона -->
+        <item name="android:colorBackground">#121212</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:textColorSecondary">#A9A9A9</item>
+
+        <!-- Стили для элементов -->
+        <item name="editTextStyle">@style/EditTextStyle</item>
+        <item name="textViewStyle">@style/TextViewStyle</item>
+        <item name="buttonStyle">@style/ButtonStyle</item>
+        <item name="spinnerStyle">@style/CustomSpinnerStyle</item>
+        <item name="checkBoxStyle">@style/CheckBoxStyle</item>
+    </style>
+
+    <style name="EditTextStyle" parent="Widget.MaterialComponents.TextInputEditText.FilledBox">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#FFFFFF</item> <!-- Белый цвет для текста -->
+        <item name="android:textColorHint">#A9A9A9</item> <!-- Светло-серый цвет для подсказки -->
+    </style>
+
+    <style name="TextViewStyle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="ButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="CustomSpinnerStyle" parent="Widget.AppCompat.Spinner"> <!-- Новое определение -->
+        <item name="android:padding">8dp</item>
+        <item name="android:backgroundTint">?attr/colorPrimary</item>
+        <item name="android:popupBackground">?attr/colorPrimary</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="CheckBoxStyle" parent="Widget.MaterialComponents.CompoundButton.CheckBox">
+        <item name="android:textSize">14sp</item>
     </style>
 </resources>

@@ -138,11 +138,11 @@ public class InvocationActivity extends AppCompatActivity {
                 Toast.makeText(InvocationActivity.this, R.string.specifyPatronymic, Toast.LENGTH_SHORT).show();
                 return;
             }
-            if (isEmpty(phone.getText().toString())) {
+            if (isEmpty(phone.getText().toString().trim().replaceAll("[-+.^:,( )]",""))) {
                 Toast.makeText(InvocationActivity.this, R.string.specifyPhoneNumber, Toast.LENGTH_SHORT).show();
                 return;
             }
-            if (!PhoneNumberUtils.isGlobalPhoneNumber(phone.getText().toString())) {
+            if (!PhoneNumberUtils.isGlobalPhoneNumber(phone.getText().toString().trim().replaceAll("[-+.^:,( )]",""))) {
                 Toast.makeText(InvocationActivity.this, "Невалидный номер телефона", Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -167,13 +167,12 @@ public class InvocationActivity extends AppCompatActivity {
                 return;
             }
 
-            sendData.setEnabled(false);
             String request =
                     url
                             + "?action=create&surname=" + surname.getText().toString().trim()
                             + "&name=" + name.getText().toString().trim()
                             + "&patronymic=" + patronymic.getText().toString().trim()
-                            + "&phone=" + phone.getText().toString().trim()
+                            + "&phone=" + phone.getText().toString().trim().replaceAll("[-+.^:,( )]","")
                             + "&email=" + email.getText().toString().trim()
                             + "&group=" + groupSpinner.getSelectedItem().toString()
                             + "&employer=" + employer.getText().toString().trim()

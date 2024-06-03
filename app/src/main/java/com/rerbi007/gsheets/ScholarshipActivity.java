@@ -50,7 +50,7 @@ public class ScholarshipActivity extends AppCompatActivity {
     CheckBox isCorrect, iAgree, iAmNotRobot;
     EditText surname, name, patronymic, phone, email;
     Button sendData;
-    Spinner courseSpinner, groupSpinner;
+    Spinner courseSpinner, groupSpinner, copiesSpinner;
     ArrayList<String> groups = new ArrayList<>();
     ArrayList<String> filteredGroupNumbers = new ArrayList<>();
     ArrayAdapter<String> adapter;
@@ -78,6 +78,7 @@ public class ScholarshipActivity extends AppCompatActivity {
         courseSpinner = findViewById(R.id.courseSpinner);
         groupSpinner = findViewById(R.id.groupSpinner);
 
+        copiesSpinner = findViewById(R.id.copiesSpinner);
         isCorrect = findViewById(R.id.isCorrect);
         iAgree = findViewById(R.id.iAgree);
         iAmNotRobot = findViewById(R.id.iAmNotRobot);
@@ -137,11 +138,11 @@ public class ScholarshipActivity extends AppCompatActivity {
                 Toast.makeText(ScholarshipActivity.this, R.string.specifyPatronymic, Toast.LENGTH_SHORT).show();
                 return;
             }
-            if (isEmpty(phone.getText().toString())) {
+            if (isEmpty(phone.getText().toString().trim().replaceAll("[-+.^:,( )]",""))) {
                 Toast.makeText(ScholarshipActivity.this, R.string.specifyPhoneNumber, Toast.LENGTH_SHORT).show();
                 return;
             }
-            if (!PhoneNumberUtils.isGlobalPhoneNumber(phone.getText().toString())) {
+            if (!PhoneNumberUtils.isGlobalPhoneNumber(phone.getText().toString().trim().replaceAll("[-+.^:,( )]",""))) {
                 Toast.makeText(ScholarshipActivity.this, "Невалидный номер телефона", Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -166,15 +167,15 @@ public class ScholarshipActivity extends AppCompatActivity {
                 return;
             }
 
-            sendData.setEnabled(false);
             String request =
                     url
                             + "?action=create&surname=" + surname.getText().toString().trim()
                             + "&name=" + name.getText().toString().trim()
                             + "&patronymic=" + patronymic.getText().toString().trim()
-                            + "&phone=" + phone.getText().toString().trim()
+                            + "&phone=" + phone.getText().toString().trim().replaceAll("[-+.^:,( )]","")
                             + "&email=" + email.getText().toString().trim()
                             + "&group=" + groupSpinner.getSelectedItem().toString()
+                            + "&numberOfCopies=" + copiesSpinner.getSelectedItem().toString()
                             + "&startDate=" + getDateFromDatePicker(startDate)
                             + "&endDate=" + getDateFromDatePicker(endDate);
 
