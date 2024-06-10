@@ -12,7 +12,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainFormActivity extends AppCompatActivity {
 
-    Button studyPlace, Scholarship, Invocation;
+    Button studyPlace, Scholarship, Invocation, Contacts;
     Intent myIntent;
 
     @Override
@@ -41,6 +41,12 @@ public class MainFormActivity extends AppCompatActivity {
         Invocation = findViewById(R.id.invocation);
         Invocation.setOnClickListener(v -> {
             myIntent = new Intent(this, InvocationActivity.class);
+            startActivity(myIntent);
+        });
+
+        Contacts = findViewById(R.id.contacts);
+        Contacts.setOnClickListener(v -> {
+            myIntent = new Intent(this, ContactsActivity.class);
             startActivity(myIntent);
         });
     }

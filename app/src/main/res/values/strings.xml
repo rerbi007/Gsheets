@@ -29,6 +29,11 @@
     <string name="testRecaptcha">TESTRECAPTCHA</string>
     <string name="siteKey">6LdgeoopAAAAAGCF5PNXtreKjuFEZ9zUmfTI94ks</string>
     <string name="available">Можно подать заявку на следующие справки</string>
+    <string name="findMe">Если у Вас возникли вопросы, свяжитесь со мной</string>
+    <string name="vk"><a href="https://vk.me/id533512555/">Vk</a></string>
+    <string name="telegram"><a href="https://t.me/username17534789036">Telegram</a></string>
+    <string name="findMeEmail"><a href="mailto:rerbi007@gmail.com">Email</a></string>
+    <string name="findMePhone">+79120435359</string>
     <string-array name="course">
         <item>1</item>
         <item>2</item>

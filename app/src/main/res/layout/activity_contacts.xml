@@ -26,20 +26,59 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_gravity="left"
+                style="?attr/textViewStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="left"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:text="Контакты"
-                android:textSize="28sp"
-                style="?attr/textViewStyle" />
+                android:text="Поддержка, отзывы, обратная связь"
+                android:textSize="28sp" />
 
-            <include
-                android:visibility="invisible"
-                layout="@layout/reusable_date_picker"
+            <TextView
+                style="?attr/textViewStyle"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:justificationMode="inter_word"
+                android:text="@string/findMe" />
+
+            <TextView
+                android:id="@+id/findMeVk"
+                style="?attr/textViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/vk" />
+
+            <TextView
+                android:id="@+id/findMeTelegram"
+                style="?attr/textViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/telegram" />
+
+            <TextView
+                android:id="@+id/findMeEmail"
+                style="?attr/textViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/findMeEmail" />
+
+            <TextView
+                android:autoLink="phone"
+                android:id="@+id/findMePhone"
+                style="?attr/textViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/findMePhone" />
+
+
+            <TextView
+                style="?attr/textViewStyle"
+                android:justificationMode="inter_word"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Мобильное приложение разработал\nШипицын Александр Павлович, студент группы 403ИСП в рамках выполнения дипломного проекта.\nРуководитель проекта Денисова Анастасия Эдуардовна, преподаватель, первая квалификационная категория" />
+
 
         </LinearLayout>
     </LinearLayout>
