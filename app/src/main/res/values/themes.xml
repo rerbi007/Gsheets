@@ -29,6 +29,7 @@
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">#000000</item> <!-- Черный цвет для текста -->
         <item name="android:textColorHint">#6C757D</item> <!-- Средне-серый цвет для подсказки -->
+        <item name="android:background">@drawable/edit_text_borders</item>
     </style>
 
     <style name="TextViewStyle" parent="Widget.MaterialComponents.TextView">
