@@ -47,6 +47,7 @@
                 style="?attr/textViewStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:text="@string/vk" />
 
             <TextView
@@ -54,6 +55,7 @@
                 style="?attr/textViewStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:text="@string/telegram" />
 
             <TextView
@@ -61,22 +63,27 @@
                 style="?attr/textViewStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:text="@string/findMeEmail" />
 
             <TextView
-                android:autoLink="phone"
                 android:id="@+id/findMePhone"
                 style="?attr/textViewStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:autoLink="phone"
                 android:text="@string/findMePhone" />
+
 
             <TextView
                 style="?attr/textViewStyle"
-                android:justificationMode="inter_word"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:justificationMode="inter_word"
                 android:text="Мобильное приложение разработал\nШипицын Александр Павлович, студент группы 403ИСП в рамках выполнения дипломного проекта" />
+
 
         </LinearLayout>
     </LinearLayout>

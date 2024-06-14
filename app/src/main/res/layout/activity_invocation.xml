@@ -44,10 +44,12 @@
                 android:id="@+id/employer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:hint="Полное наименование организации - работодателя"
-                android:inputType="text"
+                android:gravity="start"
                 android:minHeight="48dp"
+                android:padding="10dp"
+                android:layout_marginTop="20dp"
+                android:hint="Полное наименование\nорганизации - работодателя"
+                android:inputType="textImeMultiLine"
                 style="?attr/editTextStyle" />
 
             <include
