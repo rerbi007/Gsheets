@@ -49,6 +49,7 @@
         android:gravity="start"
         android:hint="@string/patronymic"
         android:inputType="textPersonName|textCapWords"
+        android:digits="абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
         android:minHeight="48dp"
         android:padding="10dp"
         style="?attr/editTextStyle" />
