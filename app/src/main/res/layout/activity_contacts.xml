@@ -71,14 +71,12 @@
                 android:layout_height="wrap_content"
                 android:text="@string/findMePhone" />
 
-
             <TextView
                 style="?attr/textViewStyle"
                 android:justificationMode="inter_word"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Мобильное приложение разработал\nШипицын Александр Павлович, студент группы 403ИСП в рамках выполнения дипломного проекта.\nРуководитель проекта Денисова Анастасия Эдуардовна, преподаватель, первая квалификационная категория" />
-
+                android:text="Мобильное приложение разработал\nШипицын Александр Павлович, студент группы 403ИСП в рамках выполнения дипломного проекта" />
 
         </LinearLayout>
     </LinearLayout>
