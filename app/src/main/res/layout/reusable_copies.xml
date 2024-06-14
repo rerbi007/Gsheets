@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/copiesNumber"
+        android:layout_marginLeft="20dp"
         android:textSize="18sp" />
 
     <Spinner

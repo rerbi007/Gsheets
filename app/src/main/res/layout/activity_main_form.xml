@@ -45,16 +45,12 @@
             <Button
                 android:id="@+id/studyPlace"
                 style="?attr/buttonStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:text="Справка об обучении" />
 
 
             <Button
                 android:id="@+id/scholarship"
                 style="?attr/buttonStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:text="Справка о стипендии"
                 app:layout_constraintTop_toBottomOf="@+id/studyPlace" />
@@ -62,8 +58,6 @@
             <Button
                 android:id="@+id/invocation"
                 style="?attr/buttonStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:text="Справка-вызов" />
 
@@ -81,8 +75,6 @@
             <Button
                 android:id="@+id/contacts"
                 style="?attr/buttonStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:text="Контакты" />
 
             <include

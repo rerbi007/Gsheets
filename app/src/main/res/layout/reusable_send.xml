@@ -8,7 +8,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
         android:layout_marginEnd="10dp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
@@ -19,10 +18,10 @@
             android:layout_height="wrap_content" />
 
         <TextView
+            style="?attr/textViewStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/isCorrect"
-            style="?attr/textViewStyle" />
+            android:layout_height="match_parent"
+            android:text="@string/isCorrect" />
     </LinearLayout>
 
     <LinearLayout
@@ -39,10 +38,10 @@
 
         <TextView
             android:id="@+id/privacy_policy"
+            style="?attr/textViewStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/iAgree"
-            style="?attr/textViewStyle" />
+            android:layout_height="match_parent"
+            android:text="@string/iAgree" />
     </LinearLayout>
 
     <LinearLayout
@@ -58,10 +57,10 @@
             android:layout_height="wrap_content" />
 
         <TextView
+            style="?attr/textViewStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/iAmNotRobotTextView"
-            style="?attr/textViewStyle" />
+            android:layout_height="match_parent"
+            android:text="@string/iAmNotRobotTextView" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -72,6 +71,7 @@
 
         <Button
             android:id="@+id/saveData"
+            style="?attr/buttonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="56dp"
@@ -79,8 +79,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            style="?attr/buttonStyle"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ProgressBar
             android:id="@+id/progress_bar"
