@@ -50,7 +50,7 @@ public class ScholarshipActivity extends AppCompatActivity {
     CheckBox isCorrect, iAgree, iAmNotRobot;
     EditText surname, name, patronymic, phone, email;
     Button sendData;
-    Spinner courseSpinner, groupSpinner;
+    Spinner courseSpinner, groupSpinner, copiesSpinner;
     ArrayList<String> groups = new ArrayList<>();
     ArrayList<String> filteredGroupNumbers = new ArrayList<>();
     ArrayAdapter<String> adapter;
@@ -78,6 +78,7 @@ public class ScholarshipActivity extends AppCompatActivity {
         courseSpinner = findViewById(R.id.courseSpinner);
         groupSpinner = findViewById(R.id.groupSpinner);
 
+        copiesSpinner = findViewById(R.id.copiesSpinner);
         isCorrect = findViewById(R.id.isCorrect);
         iAgree = findViewById(R.id.iAgree);
         iAmNotRobot = findViewById(R.id.iAmNotRobot);
@@ -176,7 +177,8 @@ public class ScholarshipActivity extends AppCompatActivity {
                             + "&email=" + email.getText().toString().trim()
                             + "&group=" + groupSpinner.getSelectedItem().toString()
                             + "&startDate=" + getDateFromDatePicker(startDate)
-                            + "&endDate=" + getDateFromDatePicker(endDate);
+                            + "&endDate=" + getDateFromDatePicker(endDate)
+                            + "&numberOfCopies=" + copiesSpinner.getSelectedItem().toString();
 
             captcha.validate(ScholarshipActivity.this, request, this, sendData, progressBar);
             //new Handler(Looper.getMainLooper()).postDelayed(() -> saveData.setEnabled(true), 10000); // Delay of 5 seconds (5000 milliseconds)

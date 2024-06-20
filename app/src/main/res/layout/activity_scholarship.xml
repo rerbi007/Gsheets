@@ -21,7 +21,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Справка о стипендии (о среднем доходе)"
+            android:text="Справка о стипендии"
             android:textSize="28sp" />
 
         <include

@@ -23,9 +23,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="40dp"
             android:layout_marginStart="22dp"
             android:layout_marginEnd="22dp"
+            android:layout_marginBottom="40dp"
             android:gravity="center_vertical"
             android:orientation="vertical">
 
@@ -35,8 +35,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
                 android:gravity="left"
-                android:paddingStart="32dp"
-                android:paddingEnd="32dp"
                 android:text="@string/available"
                 android:textSize="24sp" />
 
@@ -45,6 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Справка об обучении"
+
                 android:textSize="24sp" />
 
 
@@ -62,8 +61,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:text="Справка-вызов"
+                android:text="Справка- вызов"
                 android:textSize="24sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:layout_marginBottom="24dp"
+                android:text="Поддержка, отзывы, обратная связь"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/contacts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Контакты"
+                android:textSize="24sp" />
+
+            <include
+                layout="@layout/reusable_date_picker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

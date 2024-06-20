@@ -8,7 +8,7 @@
     <string name="confirmDataCorrectness">Необходимо подтвердить правильность введенных данных</string>
     <string name="acceptPersonalDataProcessing">Необходимо дать согласие на обработку персональных данных</string>
     <string name="iAmNotRobot">Подтвердите, что Вы не робот</string>
-    <string name="studyPlaceCertificate">Справка с места учебы (для подтверждения факта обучения)</string>
+    <string name="studyPlaceCertificate">Справка с места учебы</string>
     <string name="personalData">Персональные данные</string>
     <string name="surname">Фамилия</string>
     <string name="name">Имя</string>
@@ -18,17 +18,22 @@
     <string name="serviceInformationRequired">Информация к услуге</string>
     <string name="course">Курс</string>
     <string name="groupNumber">Номер группы</string>
-    <string name="copiesNumber">Количество копий справки (не более двух)</string>
+    <string name="copiesNumber">Количество копий справки\n(не более двух)</string>
     <string name="isCorrect">Я подтверждаю правильность введенных мною данных</string>
     <string name="iAgree">Я согласен с <a href="https://www.consultant.ru/document/cons_doc_LAW_61801/">условиями обработки персональных данных</a></string>
     <string name="iAmNotRobotTextView">Я не робот</string>
     <string name="send">ОТПРАВИТЬ</string>
-    <string name="urlStudyPlace">https://script.google.com/macros/s/AKfycby60gKAZdcgjXbK3G3aijKIWzwfC6DXp58KXJugWm4oq3L1rSt9X6wbGvqbMAuJgWuC/exec</string>
-    <string name="urlInvocation">https://script.google.com/macros/s/AKfycbxGXg_KpAzw5WnEutnxRFmxrpzxU0LFKgqOb9rasqXXSzElcPMV7R3aBW8XgUO7-tQk/exec</string>
-    <string name="urlScholarship">https://script.google.com/macros/s/AKfycbwZjRBAAEIpyjqqeJfcHmhpYtqDoSNLxBous9mv1L4cbP3lCmLkiJima46x6E9H6nU2aQ/exec</string>
+    <string name="urlStudyPlace">https://script.google.com/macros/s/AKfycbz2aMFHRV2N5lAebirz5VxCx8A7EFDie_SVoH_u8y2Kowul-OOtvJFHjS9dT8npDNPS/exec</string>
+    <string name="urlScholarship">https://script.google.com/macros/s/AKfycbyAVfWQoexM9zU1Hd77Ed2LEJFPsL0tgCxGEGbMzCV4xaJcZCiRnsusbITU1VxaQKuBmg/exec</string>
+    <string name="urlInvocation">https://script.google.com/macros/s/AKfycbxijWMXpezzDtT1fRvPHmTVZDSe5mKapnZNJL1nm2EQm1xsn5mdUpECZfI-oGujW_GS/exec</string>
     <string name="testRecaptcha">TESTRECAPTCHA</string>
     <string name="siteKey">6LdgeoopAAAAAGCF5PNXtreKjuFEZ9zUmfTI94ks</string>
-    <string name="available">Можно подать заявку на следующие справки</string>
+    <string name="available">Выберите тип справки</string>
+    <string name="findMe">Если у Вас возникли вопросы, свяжитесь со мной</string>
+    <string name="vk"><a href="https://vk.me/id533512555/">Vk</a></string>
+    <string name="telegram"><a href="https://t.me/username17534789036">Telegram</a></string>
+    <string name="findMeEmail"><a href="mailto:rerbi007@gmail.com">Email</a></string>
+    <string name="findMePhone">+79120435359</string>
     <string-array name="course">
         <item>1</item>
         <item>2</item>

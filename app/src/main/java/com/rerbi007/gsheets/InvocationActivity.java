@@ -43,7 +43,7 @@ public class InvocationActivity extends AppCompatActivity {
 
     ProgressBar progressBar;
     DatePicker startDate, endDate;
-    TextView privacyPolicy;
+    TextView privacyPolicy, tvStart, tvEnd;
     MyCaptcha captcha;
     String url;
     CheckBox isCorrect, iAgree, iAmNotRobot;
@@ -69,6 +69,10 @@ public class InvocationActivity extends AppCompatActivity {
         startDate = findViewById(R.id.startDate);
         endDate = findViewById(R.id.endDate);
         privacyPolicy = findViewById(R.id.privacy_policy);
+        tvStart = findViewById(R.id.tvStart);
+        tvEnd = findViewById(R.id.tvEnd);
+        tvStart.setText("Начало сессии");
+        tvEnd.setText("Окончание сессии");
         captcha = new MyCaptcha();
         url = getString(R.string.urlInvocation);
         surname = findViewById(R.id.surname);

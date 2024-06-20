@@ -18,13 +18,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:autofillHints="surname"
+        android:digits="абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
         android:gravity="start"
         android:hint="@string/surname"
         android:inputType="textPersonName|textCapWords"
         android:minHeight="48dp"
         android:padding="10dp"
+        android:singleLine="true"
         android:textColor="#000000"
-        android:textColorHint="#444444" />
+        android:textColorHint="#444444"/>
 
     <EditText
         android:id="@+id/name"
@@ -32,11 +34,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:autofillHints="name"
+        android:digits="абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
         android:gravity="start"
         android:hint="@string/name"
         android:inputType="textPersonName|textCapWords"
         android:minHeight="48dp"
         android:padding="10dp"
+        android:singleLine="true"
         android:textColor="#000000"
         android:textColorHint="#444444" />
 
@@ -46,11 +50,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:autofillHints="patronymic"
+        android:digits="абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
         android:gravity="start"
         android:hint="@string/patronymic"
         android:inputType="textPersonName|textCapWords"
         android:minHeight="48dp"
         android:padding="10dp"
+        android:singleLine="true"
         android:textColor="#000000"
         android:textColorHint="#444444" />
 
@@ -58,12 +64,15 @@
         android:id="@+id/phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:autofillHints="phone"
+        android:digits="+-()0123456789"
         android:gravity="start"
         android:hint="@string/phone"
         android:inputType="phone"
         android:minHeight="48dp"
         android:padding="10dp"
+        android:singleLine="true"
         android:textColor="#000000"
         android:textColorHint="#444444" />
 
@@ -73,11 +82,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:autofillHints="emailAddress"
+        android:digits="\abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@._+-0123456789"
         android:gravity="start"
         android:hint="@string/email"
         android:inputType="textEmailAddress|none"
         android:minHeight="48dp"
         android:padding="10dp"
+        android:singleLine="true"
         android:textColor="#000000"
         android:textColorHint="#444444" />
 

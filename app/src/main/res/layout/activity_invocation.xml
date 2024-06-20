@@ -35,10 +35,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="Полное наименование организации - работодателя"
-            android:inputType="text"
+            android:hint="Полное наименование\nорганизации - работодателя"
+            android:digits="абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ "
+            android:inputType="textMultiLine"
             android:minHeight="48dp"
-            android:textColorHint="#546E7A" />
+            android:textColor="#000000"
+            android:textColorHint="#444444" />
 
         <include
             layout="@layout/reusable_group"
